@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密货币交易所导航</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f0f2f5;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --text-light: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .exchange-list {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .exchange-item {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .exchange-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .exchange-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exchange-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .exchange-name {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .exchange-description {
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .primary-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .secondary-button:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .routes-page {
+            display: none;
+        }
+
+        .route-item {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .back-button {
+            background-color: #34495e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .exchange-item {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>加密货币交易所导航</h1>
+            <p class="subtitle">链接点不开？刷新！还打不开？试下其他线路！仍打不开？加QQ: 729059443</p>
+        </header>
+        <div id="main-page" class="exchange-list">
+            <div class="exchange-item">
+                <img src="images/binance-logo.png" alt="币安Logo" class="exchange-logo">
+                <div class="exchange-info">
+                    <div class="exchange-name">币安 Binance</div>
+                    <div class="exchange-description">全球第一大所，新用户注册可得100USDT奖励</div>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button" onclick="showRoutes('binance')">更多线路</button>
+                </div>
+            </div>
+            <div class="exchange-item">
+                <img src="images/okx-logo.png" alt="欧意Logo" class="exchange-logo">
+                <div class="exchange-info">
+                    <div class="exchange-name">欧意 OKX</div>
+                    <div class="exchange-description">全球前三，新用户拆盲盒100%中奖，最高价值60000元</div>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button" onclick="showRoutes('okx')">更多线路</button>
+                </div>
+            </div>
+            <div class="exchange-item">
+                <img src="images/bitget-logo.png" alt="Bitget Logo" class="exchange-logo">
+                <div class="exchange-info">
+                    <div class="exchange-name">Bitget交易所</div>
+                    <div class="exchange-description">Bitget上新币快、领空投到手软，注册即可领取BGB空投</div>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button">进入官网</button>
+                </div>
+            </div>
+            <div class="exchange-item">
+                <img src="images/BYBIT-logo.png" alt="BYBIT Logo" class="exchange-logo">
+                <div class="exchange-info">
+                    <div class="exchange-name">BYBIT</div>
+                    <div class="exchange-description">Bybit现已开放大陆用户注册，尽快抢注并kyc得3000usdt奖励</div>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button">进入官网</button>
+                </div>
+            </div>
+            <div class="exchange-item">
+                <img src="images/htx-logo.png" alt="火币HTX Logo" class="exchange-logo">
+                <div class="exchange-info">
+                    <div class="exchange-name">火币HTX</div>
+                    <div class="exchange-description">曾经的三大交易所之一，近期空投活动较多，力争重回巅峰</div>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button">进入官网</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="binance-routes" class="routes-page">
+            <button class="back-button" onclick="showMainPage()">返回</button>
+            <h2>币安 Binance 更多线路</h2>
+            <div class="route-item">
+                <h3>币安binance线路一（无需梯子）</h3>
+                <p>币安交易所全球第一大数字货币交易所，新用户注册可得100usdt奖励</p>
+                <button class="button primary-button">点击注册</button>
+            </div>
+            <div class="route-item">
+                <h3>币安binance线路二（无需梯子）</h3>
+                <p>通过本站注册币安交易所有机会获得官方空投周边的机会哦，添加我的QQ提供uid即可</p>
+                <button class="button primary-button">点击注册</button>
+            </div>
+            <div class="route-item">
+                <h3>币安binance线路三（无需梯子）</h3>
+                <p>币安交易所活动多，空投多，操作简单适合新手和专业人士，注册后添加我教你下载app</p>
+                <button class="button primary-button">点击注册</button>
+            </div>
+            <div class="route-item">
+                <h3>币安binance线路四（无需梯子）</h3>
+                <p>币安交易所拥有强大的社区，注册后可添加我，我邀请你进入社区和数十万用户一起讨论行情</p>
+                <button class="button primary-button">点击注册</button>
+            </div>
+        </div>
+        
+        <div id="okx-routes" class="routes-page">
+            <button class="back-button" onclick="showMainPage()">返回</button>
+            <h2>欧意 OKX 更多线路</h2>
+            <div class="route-item">
+                <h3>欧意OKX线路一</h3>
+                <p>欧意交易所全球排名前三，新用户拆盲盒100%中奖，最高价值60000元</p>
+                <button class="button primary-button">点击注册</button>
+                <button class="button secondary-button">安卓APP</button>
+            </div>
+            <div class="route-item">
+                <h3>欧意OKX线路二</h3>
+                <p>苹果APP下载：注册好账号后加我，我教你下载</p>
+                <button class="button primary-button">点击注册</button>
+                <button class="button secondary-button">安卓APP</button>
+            </div>
+            <div class="route-item">
+                <h3>欧意OKX线路三</h3>
+                <p>新用户单笔交易超过100U可领15-25U奖励，最高1800U直接赠送，真金白银实实在在地赠送！</p>
+                <button class="button primary-button">点击注册</button>
+                <button class="button secondary-button">安卓下载</button>
+            </div>
+            <div class="route-item">
+                <h3>欧意OKX线路四</h3>
+                <p>用默认浏览器打开，不要用微信或者其他浏览器打开，点进去打不开的话，刷新下就好了</p>
+                <button class="button primary-button">点击注册</button>
+                <button class="button secondary-button">安卓下载</button>
+            </div>
+            <div class="route-item">
+                <h3>欧意OKX线路五</h3>
+                <p>欧意web3钱包，买卖铭文就用欧意钱包，一个入口包揽整个WEB3世界</p>
+                <button class="button primary-button">点击注册</button>
+                <button class="button secondary-button">安卓下载</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRoutes(exchange) {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById(exchange + '-routes').style.display = 'block';
+        }
+
+        function showMainPage() {
+            document.getElementById('main-page').style.display = 'grid';
+            document.querySelectorAll('.routes-page').forEach(function(el) {
+                el.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
