@@ -73,6 +73,7 @@
         .exchange-logo, .route-logo {
             width: 60px;
             height: 60px;
+            min-width: 60px;
             margin-right: 20px;
             border-radius: 50%;
             object-fit: cover;
@@ -81,6 +82,7 @@
 
         .exchange-info, .route-info {
             flex-grow: 1;
+            min-width: 0;
         }
 
         .exchange-name, .route-name {
@@ -110,6 +112,10 @@
             font-weight: 500;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
         }
 
         .primary-button {
@@ -165,6 +171,14 @@
             color: var(--primary-color);
         }
 
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--card-background);
+            border-radius: 15px;
+        }
+
         @media (max-width: 768px) {
             .exchange-item, .route-item {
                 flex-direction: column;
@@ -177,8 +191,14 @@
             }
 
             .button-group {
+                flex-direction: column;
                 margin-left: 0;
                 margin-top: 15px;
+                width: 100%;
+            }
+
+            .button {
+                width: 100%;
             }
         }
     </style>
@@ -187,7 +207,7 @@
     <div class="container">
         <header class="header">
             <h1>加密货币交易所导航</h1>
-            <p class="subtitle">链接点不开？刷新！还打不开？试下其他线路！仍打不开？加QQ: 729059443</p>
+            <p class="subtitle">链接点不开？刷新后还打不开？试下其他线路还是打不开？加微信：Caicai22222I</p>
         </header>
         <div id="main-page" class="exchange-list">
             <div class="exchange-item">
@@ -331,47 +351,50 @@
                 </div>
                 <div class="button-group">
                     <button class="button primary-button">点击注册</button>
-                    <button class="button secondary-button">安卓下载</button>
+                    <button class="button secondary-button">安卓APP</button>
                 </div>
             </div>
-                <div class="route-item">
-                    <img src="images/okx-logo.png" alt="欧意Logo" class="route-logo">
-                    <div class="route-info">
-                        <h3 class="route-name">欧意OKX线路四</h3>
-                        <p class="route-description">用默认浏览器打开，不要用微信或者其他浏览器打开，点进去打不开的话，刷新下就好了</p>
-                    </div>
-                    <div class="button-group">
-                        <button class="button primary-button">点击注册</button>
-                        <button class="button secondary-button">安卓下载</button>
-                    </div>
+            <div class="route-item">
+                <img src="images/okx-logo.png" alt="欧意Logo" class="route-logo">
+                <div class="route-info">
+                    <h3 class="route-name">欧意OKX线路四</h3>
+                    <p class="route-description">用默认浏览器打开，不要用微信或者其他浏览器打开，点进去打不开的话，刷新下就好了</p>
                 </div>
-                <div class="route-item">
-                    <img src="images/okx-logo.png" alt="欧意Logo" class="route-logo">
-                    <div class="route-info">
-                        <h3 class="route-name">欧意OKX线路五</h3>
-                        <p class="route-description">欧意web3钱包，买卖铭文就用欧意钱包，一个入口包揽整个WEB3世界</p>
-                    </div>
-                    <div class="button-group">
-                        <button class="button primary-button">点击注册</button>
-                        <button class="button secondary-button">安卓下载</button>
-                    </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button">安卓APP</button>
+                </div>
+            </div>
+            <div class="route-item">
+                <img src="images/okx-logo.png" alt="欧意Logo" class="route-logo">
+                <div class="route-info">
+                    <h3 class="route-name">欧意OKX线路五</h3>
+                    <p class="route-description">欧意web3钱包，买卖铭文就用欧意钱包，一个入口包揽整个WEB3世界</p>
+                </div>
+                <div class="button-group">
+                    <button class="button primary-button">点击注册</button>
+                    <button class="button secondary-button">安卓APP</button>
                 </div>
             </div>
         </div>
-    
-        <script>
-            function showRoutes(exchange) {
-                document.getElementById('main-page').style.display = 'none';
-                document.getElementById(exchange + '-routes').style.display = 'block';
-            }
-    
-            function showMainPage() {
-                document.getElementById('main-page').style.display = 'grid';
-                document.querySelectorAll('.routes-page').forEach(function(el) {
-                    el.style.display = 'none';
-                });
-            }
-        </script>
-    </body>
-    </html>                
-                
+
+        <footer class="footer">
+            <p>版权所有：加密交易工具箱</p>
+        </footer>
+    </div>
+
+    <script>
+        function showRoutes(exchange) {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById(exchange + '-routes').style.display = 'block';
+        }
+
+        function showMainPage() {
+            document.getElementById('main-page').style.display = 'grid';
+            document.querySelectorAll('.routes-page').forEach(function(el) {
+                el.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
