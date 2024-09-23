@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加密货币交易所导航</title>
+    <title>加密交易所导航</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
         
@@ -50,7 +50,7 @@
             color: #b7bdc6;
         }
 
-        .exchange-list {
+        .exchange-list, .routes-page {
             display: grid;
             gap: 20px;
         }
@@ -158,6 +158,10 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .route-header img {
@@ -169,6 +173,7 @@
         .route-header h2 {
             margin: 0;
             color: var(--primary-color);
+            font-size: 2em;
         }
 
         .footer {
@@ -200,13 +205,23 @@
             .button {
                 width: 100%;
             }
+
+            .route-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .route-header img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>加密货币交易所导航</h1>
+            <h1>加密交易所导航</h1>
             <p class="subtitle">链接点不开？刷新后还打不开？试下其他线路还是打不开？加微信：Caicai22222I</p>
         </header>
         <div id="main-page" class="exchange-list">
@@ -386,7 +401,7 @@
     <script>
         function showRoutes(exchange) {
             document.getElementById('main-page').style.display = 'none';
-            document.getElementById(exchange + '-routes').style.display = 'block';
+            document.getElementById(exchange + '-routes').style.display = 'grid';
         }
 
         function showMainPage() {
