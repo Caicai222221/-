@@ -104,19 +104,28 @@
         }
 
         .button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            white-space: nowrap;
-            flex: 1;
-            min-width: 120px;
-            text-align: center;
-        }
+    /* 保留现有样式 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+
+    /* 添加明确的尺寸 */
+    width: 120px; /* 或者您希望的宽度 */
+    height: 40px; /* 或者您希望的高度 */
+    line-height: 20px; /* 确保文本垂直居中 */
+
+    /* 防止内容影响大小 */
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
         .primary-button {
             background-color: var(--primary-color);
@@ -232,7 +241,7 @@
                     <div class="exchange-description">全球第一大所，新用户注册可得100USDT奖励</div>
                 </div>
                 <div class="button-group">
-                    <button class="button primary-button">点击注册</button>
+                    <a href="https://accounts.suitechsui.us/register?ref=C9JJ0YYK" target="_blank" class="button primary-button">点击注册</a>
                     <button class="button secondary-button" onclick="showRoutes('binance')">更多线路</button>
                 </div>
             </div>
@@ -243,7 +252,7 @@
                     <div class="exchange-description">全球前三，新用户拆盲盒100%中奖，最高价值60000元</div>
                 </div>
                 <div class="button-group">
-                    <button class="button primary-button">点击注册</button>
+                    <a href="https://okx.com/join/75782526" target="_blank" class="button primary-button">点击注册</a>
                     <button class="button secondary-button" onclick="showRoutes('okx')">更多线路</button>
                 </div>
             </div>
@@ -254,8 +263,8 @@
                     <div class="exchange-description">Bitget上新币快、领空投到手软，注册即可领取BGB空投</div>
                 </div>
                 <div class="button-group">
-                    <button class="button primary-button">点击注册</button>
-                    <button class="button secondary-button">进入官网</button>
+                    <a href="https://share.glassgs.com/u/2UG6S318" target="_blank" class="button primary-button">点击注册</a>
+                    <a href="https://share.glassgs.com/u/2UG6S318" target="_blank" class="button secondary-button">进入官网</a>
                 </div>
             </div>
             <div class="exchange-item">
@@ -265,8 +274,8 @@
                     <div class="exchange-description">Bybit现已开放大陆用户注册，尽快抢注并kyc得3000usdt奖励</div>
                 </div>
                 <div class="button-group">
-                    <button class="button primary-button">点击注册</button>
-                    <button class="button secondary-button">进入官网</button>
+                    <a href="https://www.bybitglobal.com/invite?ref=2QGA68L" target="_blank" class="button primary-button">点击注册</a>
+                    <a href="https://www.bybitglobal.com/invite?ref=2QGA68L" target="_blank" class="button secondary-button">进入官网</a>
                 </div>
             </div>
             <div class="exchange-item">
