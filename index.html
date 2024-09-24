@@ -104,28 +104,35 @@
         }
 
         .button {
-    /* 保留现有样式 */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    white-space: nowrap;
-    text-align: center;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-align: center;
+            width: 120px;
+            height: 40px;
+            line-height: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    /* 添加明确的尺寸 */
-    width: 120px; /* 或者您希望的宽度 */
-    height: 40px; /* 或者您希望的高度 */
-    line-height: 20px; /* 确保文本垂直居中 */
+        a.button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
 
-    /* 防止内容影响大小 */
-    box-sizing: border-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .button:hover, .button:focus {
+            width: 120px;
+            height: 40px;
+        }
 
         .primary-button {
             background-color: var(--primary-color);
@@ -231,7 +238,7 @@
     <div class="container">
         <header class="header">
             <h1>加密交易所导航</h1>
-            <p class="subtitle">链接点不开？刷新后还打不开？试下其他线路还是打不开？加微信：Caicai22222I</p>
+            <p class="subtitle">加密交易所永久入口可收藏到书签，链接打不开可添加微信：Caicai22222I QQ：3969085255</p>
         </header>
         <div id="main-page" class="exchange-list">
             <div class="exchange-item">
@@ -263,8 +270,8 @@
                     <div class="exchange-description">Bitget上新币快、领空投到手软，注册即可领取BGB空投</div>
                 </div>
                 <div class="button-group">
-                    <a href="https://share.glassgs.com/u/2UG6S318" target="_blank" class="button primary-button">点击注册</a>
-                    <a href="https://share.glassgs.com/u/2UG6S318" target="_blank" class="button secondary-button">进入官网</a>
+                    <a href="#" target="_blank" class="button primary-button">点击注册</a>
+                    <a href="#" target="_blank" class="button secondary-button">进入官网</a>
                 </div>
             </div>
             <div class="exchange-item">
@@ -274,8 +281,8 @@
                     <div class="exchange-description">Bybit现已开放大陆用户注册，尽快抢注并kyc得3000usdt奖励</div>
                 </div>
                 <div class="button-group">
-                    <a href="https://www.bybitglobal.com/invite?ref=2QGA68L" target="_blank" class="button primary-button">点击注册</a>
-                    <a href="https://www.bybitglobal.com/invite?ref=2QGA68L" target="_blank" class="button secondary-button">进入官网</a>
+                    <a href="#" target="_blank" class="button primary-button">点击注册</a>
+                    <a href="#" target="_blank" class="button secondary-button">进入官网</a>
                 </div>
             </div>
             <div class="exchange-item">
@@ -285,8 +292,8 @@
                     <div class="exchange-description">曾经的三大交易所之一，近期空投活动较多，力争重回巅峰</div>
                 </div>
                 <div class="button-group">
-                    <button class="button primary-button">点击注册</button>
-                    <button class="button secondary-button">进入官网</button>
+                    <a href="#" target="_blank" class="button primary-button">点击注册</a>
+                    <a href="#" target="_blank" class="button secondary-button">进入官网</a>
                 </div>
             </div>
         </div>
@@ -417,6 +424,19 @@
             document.getElementById('main-page').style.display = 'grid';
             document.querySelectorAll('.routes-page').forEach(function(el) {
                 el.style.display = 'none';
+            });
+        }
+
+        // 防止动态内容加载后改变按钮大小
+        window.addEventListener('load', function() {
+            resetButtonSizes();
+        });
+
+        function resetButtonSizes() {
+            var buttons = document.querySelectorAll('.button');
+            buttons.forEach(function(button) {
+                button.style.width = '120px';
+                button.style.height = '40px';
             });
         }
     </script>
