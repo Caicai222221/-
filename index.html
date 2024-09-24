@@ -104,35 +104,30 @@
         }
 
         .button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            white-space: nowrap;
-            text-align: center;
-            width: 120px;
-            height: 40px;
-            line-height: 20px;
-            box-sizing: border-box;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+    /* 保留现有样式 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
 
-        a.button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
+    /* 添加明确的尺寸 */
+    width: 120px; /* 或者您希望的宽度 */
+    height: 40px; /* 或者您希望的高度 */
+    line-height: 20px; /* 确保文本垂直居中 */
 
-        .button:hover, .button:focus {
-            width: 120px;
-            height: 40px;
-        }
+    /* 防止内容影响大小 */
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 确保链接按钮和普通按钮样式一致 */
 
         .primary-button {
             background-color: var(--primary-color);
