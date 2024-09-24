@@ -426,19 +426,6 @@
                 el.style.display = 'none';
             });
         }
-
-        // 防止动态内容加载后改变按钮大小
-        window.addEventListener('load', function() {
-            resetButtonSizes();
-        });
-
-        function resetButtonSizes() {
-            var buttons = document.querySelectorAll('.button');
-            buttons.forEach(function(button) {
-                button.style.width = '120px';
-                button.style.height = '40px';
-            });
-        }
     </script>
 </body>
 </html>
